@@ -17,9 +17,9 @@
     </button>
     <a class="navbar-brand" href="#">Rack-eat-eer</a>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">      
-      
+
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">
-       
+
         <li class="nav-item">
           <a class="nav-link" href="#">Link</a>
         </li>
@@ -29,6 +29,10 @@
     </div>
   </nav>
 
+
   <%= yield %>
+   <div class="pagination">
+    <%= will_paginate @posts %>
+  </div>
 </body>
 </html>
