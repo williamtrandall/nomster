@@ -7,13 +7,17 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-    @places = Place.paginate(:page => params[:page], per_page: 1)
+    #@places = Place.paginate(:page => params[:page], per_page: 1)
     #Need to get rid of the pagination while still defining places
   end
 
   def create
     current_user.places.create(place_params)
     redirect_to root_path
+  end
+
+  def show
+    @place = Place.find(params[:id])
   end
 
   private
