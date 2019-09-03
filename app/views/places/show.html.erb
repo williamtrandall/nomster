@@ -88,4 +88,21 @@
     </blockquote>
   </div>
   <% end %>
+
+  <div>
+    <%= simple_form_for @photo, url: place_photos_path(@place) do |f| %>
+    <%= f.input :caption %>
+    <%= f.input :picture %>
+    <%= f.submit "Add a Photo", class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+  <div>
+    <% @place.photos.each do |photo| %>
+      <% if photo.picture.present? %>
+        <%= photo.caption %>
+        <%= image_tag photo.picture, class:'image' %>
+        <% end %>
+    <% end %>
+  </div>
+  
 </div>
